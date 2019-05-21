@@ -1,0 +1,29 @@
+{
+  "name": "newbannygame",
+  "version": "1.0.0",
+  "description": "this is start of my new game",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artem8086/NewBannyGameJS.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "Artem8086",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artem8086/NewBannyGameJS/issues"
+  },
+  "homepage": "https://github.com/artem8086/NewBannyGameJS#readme",
+  "devDependencies": {
+    "coffee-script": "^1.12.7",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-connect": "^5.6.1",
+    "gulp-stylus": "^2.7.0"
+  }
+}

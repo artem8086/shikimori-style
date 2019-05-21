@@ -1,0 +1,180 @@
+@import "library/*.styl"
+
+$start_profile_width = 200px
+
+@media screen and (min-width: 1025px)
+	body
+		margin-bottom 40px
+
+	.l-top_menu-v2
+		position relative
+		background-color #151718
+		position fixed
+		bottom 0
+		padding 0
+		width 100%
+		height 40px
+
+		.logo-container
+			display none
+		.menu-icon
+			height 40px
+		&.is-submenu
+			.menu-dropdown
+				&.main
+					background-color rgba(255, 255, 255, .2)
+					.submenu-triangle
+						visibility visible
+						box-shadow 1px -1px 10px rgba(0,0,0,0.5)
+						padding-top 20px
+						height calc(100vh - 40px)
+						max-height 580px
+					.submenu
+						visibility visible
+						height calc(100vh - 80px)
+						max-height 540px
+						overflow-y auto
+				&.profile
+					visibility visible
+
+		.menu-dropdown
+			&.main
+				margin 0
+				padding 12px 16px
+				width 49px
+				height 40px
+				z-index 5
+				&:hover
+					&:before
+						filter brightness(70%)
+				&:before
+					display inline-block
+					content ''
+					background-image image('svg/windows_logo.svg')
+					background-position center
+					width 17px
+					height 17px
+					transition all 0.2s ease-in-out
+					filter brightness(0%) invert(100%)
+				
+				.submenu-triangle
+					display block !important
+					visibility hidden
+					background-color rgba(48, 48, 48, .95)
+					position absolute
+					width 800px
+					max-width 800px !important
+					height calc(100vh - 60px)
+					max-height 560px
+					transition all 0.2s ease-in-out
+					left 0
+					bottom 40px
+					z-index -2
+					&:after
+					&:before
+						display none
+					span
+						display none
+				.submenu
+					visibility hidden
+					display block
+					position absolute
+					background-color transparent
+					top unset !important
+					left 50px
+					bottom 60px
+					width 300px
+					height calc(100vh - 260px)
+					max-height 360px
+					border none
+					overflow-y hidden
+					transition all 0.25s ease-in-out
+			&.profile
+				background-color transparent
+				visibility hidden
+				z-index 8
+				& > span
+					position fixed
+					left 0
+					bottom 40px
+					min-width 50px
+				&.active
+					.submenu-triangle
+						background-color #4e5257
+						width $start_profile_width
+					.submenu
+						background-color #4e5257
+						width $start_profile_width
+						max-width $start_profile_width
+						.legend
+							display block
+						a
+							.text
+								display inline-block
+				.submenu-triangle
+					background-color transparent
+					transition all 0.25s ease-in-out
+					padding 0 10px
+					width 50px
+					img
+						border-radius 50%
+					&:after
+						display none
+				.submenu
+					display block
+					position fixed
+					background-color transparent
+					top unset !important
+					left 0
+					bottom 86px
+					width 50px
+					max-height 360px
+					border none
+					transition all 0.25s ease-in-out
+					.legend
+						display none
+					a
+						width $start_profile_width
+						.text
+							display none
+
+	// .l-top_menu-v2 .active .submenu
+	// 	max-height calc(100vh - 46px)
+	// 	overflow auto
+
+
+// .p-profiles .profile-head .c-info,
+// .p-profiles .profile-head .c-history,
+// .p-profiles-show .profile-content .activity,
+// .p-profiles-show .profile-content .lifetime,
+// .p-profiles-show .profile-content .c-column.c-right,
+// .l-content,
+// .l-menu,
+// .p-profiles-edit .block.m0,
+// .p-user_history .block.m0,
+// .p-achievements .block.m0,
+// .p-achievements .p-achievements-global,
+// .p-profiles-moderation .block.m0,
+// .p-profiles-favourites .block.m0,
+// .p-pages-ongoings .block.m0,
+// .p-messages .block.m0,
+// .p-dialogs .block.m0,
+// .p-statistics .block,
+// .p-pages-info .cc-2a,
+// .p-moderations .block,
+// .p-dashboards .block2,
+// .p-pages .block2,
+// .p-pages .cc-second,
+// .p-dashboards .cc-second,
+// .p-pages .cc-news,
+// .p-dashboards .cc-news,
+// .p-pages .b-brief,
+// .b-collection_search,
+// .p-contests .block,
+// .b-topic,
+// .p-profiles-show .profile-content .block:not(.cc-2) 
+// 	border-radius 8px !important
+// 	padding 6px !important
+// 	background-color rgba(255, 255, 255, 0.7) !important
+// 	box-shadow 0 0 12px rgba(255, 255, 255, 0.7) !important
+// 	transition background-color 0.15s ease-in-out
