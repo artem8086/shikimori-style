@@ -1,0 +1,37 @@
+.activity .graph.vertical .line .bar
+	box-sizing content-box
+	transform translateY(1px)
+	transform-origin center bottom
+	animation-fill-mode both
+	animation-timing-function linear
+	animation-iteration-count infinite
+	animation-duration 1.5s
+	animation-name activity
+
+.activity .graph.vertical .line .bar:hover
+	animation-name none
+	transform none
+
+.activity .graph.vertical .linenth-of-type(6n+2) .bar
+	animation-delay -.25s
+
+.activity .graph.vertical .linenth-of-type(6n+4) .bar
+	animation-delay -.5s
+
+.activity .graph.vertical .linenth-of-type(6n+3) .bar
+	animation-delay -.75s
+
+.activity .graph.vertical .linenth-of-type(6n+6) .bar
+	animation-delay -1s
+
+.activity .graph.vertical .linenth-of-type(6n+5) .bar
+	animation-delay -1.25s
+
+@keyframes activity
+	0%, 100%
+		transform translateY(1px)
+	
+	50%
+		transform translateY(7px)
+	
+
