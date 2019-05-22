@@ -1,8 +1,28 @@
 @import "library/*.styl"
 
 $start_profile_width = 220px
+$search_results_width = 352px
+$search_results_width_all = 402px
 
-@media screen and (min-width: 1025px)
+submenu-triangle-open()
+	.submenu-triangle
+		visibility visible
+		background-color rgba(48, 48, 48, .95)
+		box-shadow 1px -1px 10px rgba(0,0,0,0.5)
+		height calc(100vh - 40px)
+		max-height 580px
+
+profile-open()
+	&.profile
+		visibility visible
+		.submenu
+			height calc(100vh - 86px)
+			max-height 534px
+			bottom 86px
+			opacity 1
+
+
+@media screen and (min-width: 800px)
 	body
 		margin-bottom 40px
 
@@ -17,26 +37,105 @@ $start_profile_width = 220px
 
 		.logo-container
 			display none
+		.menu-logo
+			align-items flex-start
 		.menu-icon
 			height 40px
+			&:before
+				line-height 40px !important
+		.global-search
+			position relative
+			margin 0
+			padding 0
+			width 50px
+			height 40px
+			z-index 5
+			&:hover
+				background-color rgba(255, 255, 255, .2)
+			.hotkey-marker
+				display none
+			.search-marker
+				position absolute
+				background-image image('svg/search.svg')
+				top 8px
+				left 13px
+				width 24px
+				height 24px
+				filter invert(1)
+				&:before
+					display none
+			.search-results
+				visibility hidden
+				// position fixed
+				top unset !important
+				left 0
+				bottom 56px
+				width $search_results_width
+				height calc(100vh - 106px)
+				max-height 514px
+				border none
+				transition all 0.2s ease-in-out
+				overflow-y hidden
+				z-index 10
+			.field
+				width 49px
+				height 100%
+			.clear
+				visibility hidden
+			input
+				background-color transparent
+				border-radius 0
+				padding 0
+				height 100%
+				opacity 0
+				z-index 11
 		&.is-submenu
 			.menu-dropdown
 				&.main
 					background-color rgba(255, 255, 255, .2)
-					.submenu-triangle
-						visibility visible
-						box-shadow 1px -1px 10px rgba(0,0,0,0.5)
-						padding-top 20px
-						height calc(100vh - 40px)
-						max-height 580px
 					.submenu
 						visibility visible
 						height calc(100vh - 80px)
 						max-height 540px
 						overflow-y auto
-				&.profile
+					submenu-triangle-open()
+				profile-open()
+		&.is-search-focus
+			.global-search
+				.search-results
 					visibility visible
-
+					height calc(100vh - 87px)
+					max-height 533px
+					bottom 86px
+					overflow-y auto
+				input
+					position relative
+					bottom 46px
+					width $search_results_width
+					height 46px
+					background-color #fff
+					border-radius 0
+					padding 0 40px 0 8px
+					opacity 1
+				.clear
+					visibility visible
+					position absolute
+					top unset
+					bottom 42px
+					left 314px
+			.menu-dropdown
+				&.main
+					background-color rgba(255, 255, 255, .2)
+					.submenu
+						visibility hidden
+					.submenu-triangle
+						visibility visible
+						background-color rgba(48, 48, 48, .95)
+						box-shadow 1px -1px 10px rgba(0,0,0,0.5)
+						height calc(100vh - 40px)
+						max-height 580px
+						width $search_results_width_all
+				profile-open()
 		.menu-dropdown
 			&.main
 				margin 0
@@ -60,11 +159,11 @@ $start_profile_width = 220px
 				.submenu-triangle
 					display block !important
 					visibility hidden
-					background-color rgba(48, 48, 48, .95)
+					background-color transparent
 					position absolute
-					width 800px
+					width 352px
 					max-width 800px !important
-					height calc(100vh - 60px)
+					height calc(100vh - 100px)
 					max-height 560px
 					transition all 0.2s ease-in-out
 					left 0
@@ -95,9 +194,11 @@ $start_profile_width = 220px
 				z-index 8
 				& > span
 					position fixed
+					background-color transparent
 					left 0
 					bottom 40px
 					min-width 50px
+					z-index 9
 				&.active
 					.submenu-triangle
 						background-color #4e5257
@@ -110,24 +211,32 @@ $start_profile_width = 220px
 							display block
 				.submenu-triangle
 					background-color transparent
-					transition all 0.25s ease-in-out
+					transition color 0.25s ease-in-out, background-color 0.25s ease-in-out, width 0.25s ease-in-out
 					padding 0 10px
 					width 50px
 					img
 						border-radius 50%
 					&:after
 						display none
+					&:hover
+						background-color #fff
+						color #123
 				.submenu
-					display block
+					display flex !important
+					flex-direction column
 					position fixed
+					justify-content flex-end
 					background-color transparent
 					top unset !important
 					left 0
-					bottom 86px
+					bottom 56px
 					width 50px
-					max-height 360px
+					height calc(100vh - 106px)
+					max-height 514px
 					border none
 					transition all 0.25s ease-in-out
+					opacity 0
+					z-index 8
 					.legend
 						display none
 					a
@@ -136,7 +245,6 @@ $start_profile_width = 220px
 	// .l-top_menu-v2 .active .submenu
 	// 	max-height calc(100vh - 46px)
 	// 	overflow auto
-
 
 // .p-profiles .profile-head .c-info,
 // .p-profiles .profile-head .c-history,
