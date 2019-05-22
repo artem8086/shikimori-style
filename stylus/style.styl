@@ -101,7 +101,11 @@ profile-open()
 					submenu-triangle-open()
 				profile-open()
 		&.is-search-focus
+			.menu-dropdown
+				&.main
+					background-color transparent !important
 			.global-search
+				background-color rgba(255, 255, 255, .2)
 				.search-results
 					visibility visible
 					height calc(100vh - 87px)
