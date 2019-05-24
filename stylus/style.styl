@@ -1,4 +1,4 @@
-@import "library/*.styl"
+@import "library/mixin.styl"
 
 $start_profile_width = 220px
 $search_results_width = 352px
@@ -31,7 +31,7 @@ profile-open()
 @media screen and (min-width: 769px)
 	body
 		margin-bottom 40px
-		&:before
+		&:after
 			height calc(100vh - 40px)
 
 	.l-top_menu-v2
@@ -271,92 +271,88 @@ profile-open()
 	// 	max-height calc(100vh - 46px)
 	// 	overflow auto
 
-.l-page
-	background-color transparent !important
+// .l-page
+// 	background-color transparent !important
 
-.avatar img
-	border-radius 24px !important
-	box-shadow 0 0 8px rgba(127, 127, 127, 0.5) !important
+// .avatar img
+// 	border-radius 24px !important
+// 	box-shadow 0 0 8px rgba(127, 127, 127, 0.5) !important
 
-.l-page > div > header.head.misc
-	display none
+// .l-page > div > header.head.misc
+// 	display none
 
-header.head
-	h1
-	.notice
-	.b-separator
-	.b-breadcrumbs
-		color #fff
-		text-shadow -0   -1px 0   #000000, 0   -1px 0   #000000, -0    1px 0   #000000, 0    1px 0   #000000, -1px -0   0   #000000, 1px -0   0   #000000, -1px  0   0   #000000, 1px  0   0   #000000, -1px -1px 0   #000000, 1px -1px 0   #000000, -1px  1px 0   #000000, 1px  1px 0   #000000, -1px -1px 0   #000000, 1px -1px 0   #000000, -1px  1px 0   #000000, 1px  1px 0   #000000
+// header.head
+// 	h1
+// 	.notice
+// 	.b-separator
+// 	.b-breadcrumbs
+// 		color #fff
+// 		text-shadow -0   -1px 0   #000000, 0   -1px 0   #000000, -0    1px 0   #000000, 0    1px 0   #000000, -1px -0   0   #000000, 1px -0   0   #000000, -1px  0   0   #000000, 1px  0   0   #000000, -1px -1px 0   #000000, 1px -1px 0   #000000, -1px  1px 0   #000000, 1px  1px 0   #000000, -1px -1px 0   #000000, 1px -1px 0   #000000, -1px  1px 0   #000000, 1px  1px 0   #000000
 
-.p-profiles .profile-head .c-info,
-.p-profiles .profile-head .c-history,
-.p-profiles-show .profile-content .activity,
-.p-profiles-show .profile-content .lifetime,
-.p-profiles-show .profile-content .c-column.c-right,
-.l-content,
-.l-menu,
-.p-profiles-edit .block.m0,
-.p-user_history .block.m0,
-.p-achievements .block.m0,
-.p-achievements .p-achievements-global,
-.p-profiles-moderation .block.m0,
-.p-profiles-favourites .block.m0,
-.p-pages-ongoings .block.m0,
-.p-messages .block.m0,
-.p-dialogs .block.m0,
-.p-statistics .block,
-.p-pages-info .cc-2a,
-.p-moderations .block,
-.p-dashboards .block2,
-.p-pages .block2,
-.p-pages .cc-second,
-.p-dashboards .cc-second,
-.p-pages .cc-news,
-.p-dashboards .cc-news,
-.p-pages .b-brief,
-.b-collection_search,
-.p-contests .block,
-.b-topic,
-.user-agreement,
-.p-pages-privacy .l-page,
-.p-pages-for_right_holders .l-page,
-.p-sitemap .l-page,
-.b-search-results,
-.p-profiles-show .profile-content .block:not(.cc-2) 
-	border-radius 0 !important
-	padding 6px !important
-	background rgba(255, 255, 255, 0.7) !important
-	box-shadow 0 0 6px rgba(0, 0, 0, 0.3) !important
-	border 2px solid #1883d7 !important
-	color black
-	transition background-color 0.15s ease-in-out
-	&:hover
-		background-color #fff !important
+// .p-profiles .profile-head .c-info,
+// .p-profiles .profile-head .c-history,
+// .p-profiles-show .profile-content .activity,
+// .p-profiles-show .profile-content .lifetime,
+// .p-profiles-show .profile-content .c-column.c-right,
+// .l-content,
+// .l-menu,
+// .p-profiles-edit .block.m0,
+// .p-user_history .block.m0,
+// .p-achievements .block.m0,
+// .p-achievements .p-achievements-global,
+// .p-profiles-moderation .block.m0,
+// .p-profiles-favourites .block.m0,
+// .p-pages-ongoings .block.m0,
+// .p-messages .block.m0,
+// .p-dialogs .block.m0,
+// .p-statistics .block,
+// .p-pages-info .cc-2a,
+// .p-moderations .block,
+// .p-dashboards .block2,
+// .p-pages .block2,
+// .p-pages .cc-second,
+// .p-dashboards .cc-second,
+// .p-pages .cc-news,
+// .p-dashboards .cc-news,
+// .p-pages .b-brief,
+// .b-collection_search,
+// .p-contests .block,
+// .b-topic,
+// .user-agreement,
+// .p-pages-privacy .l-page,
+// .p-pages-for_right_holders .l-page,
+// .p-sitemap .l-page,
+// .b-search-results,
+// .p-profiles-show .profile-content .block:not(.cc-2) 
+// 	border-radius 0 !important
+// 	padding 6px !important
+// 	background rgba(255, 255, 255, 0.7) !important
+// 	box-shadow 0 0 6px rgba(0, 0, 0, 0.3) !important
+// 	border 2px solid #1883d7 !important
+// 	color black
+// 	transition background-color 0.15s ease-in-out
+// 	&:hover
+// 		background-color #fff !important
 
-.p-profiles-show .profile-content .activity
-	padding-bottom 24px !important
+// .p-profiles-show .profile-content .activity
+// 	padding-bottom 24px !important
 
-.p-profiles .profile-head .profile-actions .b-tooltipped
-	color #fff
-	&:before
-		font-size 18px
-		text-shadow -0   -2px 0   #000000, 0   -2px 0   #000000, -0    2px 0   #000000, 0    2px 0   #000000, -2px -0   0   #000000, 2px -0   0   #000000, -2px  0   0   #000000, 2px  0   0   #000000, -1px -2px 0   #000000, 1px -2px 0   #000000, -1px  2px 0   #000000, 1px  2px 0   #000000, -2px -1px 0   #000000, 2px -1px 0   #000000, -2px  1px 0   #000000, 2px  1px 0   #000000, -2px -2px 0   #000000, 2px -2px 0   #000000, -2px  2px 0   #000000, 2px  2px 0   #000000, -2px -2px 0   #000000, 2px -2px 0   #000000, -2px  2px 0   #000000, 2px  2px 0   #000000
+// .p-profiles .profile-head .profile-actions .b-tooltipped
+// 	color #fff
+// 	&:before
+// 		font-size 18px
+// 		text-shadow -0   -2px 0   #000000, 0   -2px 0   #000000, -0    2px 0   #000000, 0    2px 0   #000000, -2px -0   0   #000000, 2px -0   0   #000000, -2px  0   0   #000000, 2px  0   0   #000000, -1px -2px 0   #000000, 1px -2px 0   #000000, -1px  2px 0   #000000, 1px  2px 0   #000000, -2px -1px 0   #000000, 2px -1px 0   #000000, -2px  1px 0   #000000, 2px  1px 0   #000000, -2px -2px 0   #000000, 2px -2px 0   #000000, -2px  2px 0   #000000, 2px  2px 0   #000000, -2px -2px 0   #000000, 2px -2px 0   #000000, -2px  2px 0   #000000, 2px  2px 0   #000000
 
 .ignore-action
 .fav-remove.friend-action
 	display none
 
-.p-profiles .profile-head .c-history
-	display block !important
+// .p-profiles .profile-head .c-history
+// 	display block !important
 
 body
 	position relative
-	&:before
-		display: block
-		content: ''
-		position: fixed
-		width 100%;
+	&:after
 		height 100vh
 		background-image: image('os/win10_tan.png'), image('os/wallpaper.jpg')
 		background-size auto 120%, cover !important
