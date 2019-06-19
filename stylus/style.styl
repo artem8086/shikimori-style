@@ -1,4 +1,4 @@
-@import "library/*.styl"
+@import "library/mobile.styl"
 
 $start_profile_width = 220px
 $search_results_width = 352px
@@ -6,278 +6,278 @@ $search_results_width_all = 402px
 
 $windows_hover_color = rgba(255, 255, 255, .15)
 
-.l-top_menu-v2
-	.menu-dropdown
-		&.active
-			.submenu
-				display block
+// .l-top_menu-v2
+// 	.menu-dropdown
+// 		&.active
+// 			.submenu
+// 				display block
 
-submenu-triangle-open()
-	visibility visible
-	box-shadow 1px -1px 10px rgba(0,0,0,0.5)
-	height calc(100vh - 40px)
-	max-height 580px
-	&.icon-avatar
-		img
-			bottom 8px
-			opacity 1
+// submenu-triangle-open()
+// 	visibility visible
+// 	box-shadow 1px -1px 10px rgba(0,0,0,0.5)
+// 	height calc(100vh - 40px)
+// 	max-height 580px
+// 	&.icon-avatar
+// 		img
+// 			bottom 8px
+// 			opacity 1
 
-profile-open()
-	&.profile
-		visibility visible
-		.submenu
-			height calc(100vh - 86px)
-			max-height 534px
-			bottom 86px
-			opacity 1
-		.submenu-triangle
-			margin-bottom 0
-			opacity 1
+// profile-open()
+// 	&.profile
+// 		visibility visible
+// 		.submenu
+// 			height calc(100vh - 86px)
+// 			max-height 534px
+// 			bottom 86px
+// 			opacity 1
+// 		.submenu-triangle
+// 			margin-bottom 0
+// 			opacity 1
 
-@media screen and (min-width: 769px)
-	body
-		margin-bottom 40px
-		&:before
-			height calc(100vh - 40px)
+// @media screen and (min-width: 769px)
+// 	body
+// 		margin-bottom 40px
+// 		&:before
+// 			height calc(100vh - 40px)
 
-	.l-top_menu-v2
-		position relative
-		background-color #151718
-		position fixed
-		bottom 0
-		padding 0
-		width 100%
-		height 40px
+// 	.l-top_menu-v2
+// 		position relative
+// 		background-color #151718
+// 		position fixed
+// 		bottom 0
+// 		padding 0
+// 		width 100%
+// 		height 40px
 
-		.logo-container
-			display none
-		.menu-icon
-			transition background 0.2s ease-in-out !important
-			height 40px
-			order 999
-			&.desktop
-				display flex !important
-			&.search.mobile
-				display none
-			&:before
-				line-height 40px !important
-			&:hover
-				background-color $windows_hover_color !important
-			&:first-of-type
-				margin-left auto
-		.global-search
-			position relative
-			display block !important
-			margin 0
-			padding 0
-			width 48px
-			height 40px
-			z-index 5
-			&:hover
-				background-color $windows_hover_color
-			.hotkey-marker
-				display none
-			.search-marker
-				position absolute
-				background-image image('svg/search.svg')
-				background-position center
-				background-repeat no-repeat
-				background-size 22px 22px
-				width 100%
-				height 100%
-				filter invert(1)
-				&:before
-					display none
-			.search-results
-				top unset !important
-				left 0
-				bottom 86px
-				width $search_results_width
-				height calc(100vh - 87px)
-				max-height 533px
-				overflow-y auto
-				border none
-				z-index 10
-			.field
-				width 48px
-				height 100%
-			.clear
-				visibility hidden
-			input
-				border-radius 0
-				padding 0
-				height 100%
-				opacity 0
-				z-index 11
-		&.is-submenu
-			.menu-dropdown
-				&.main
-					background-color $windows_hover_color
-					.submenu
-						visibility visible
-						height calc(100vh - 80px)
-						max-height 540px
-						overflow-y auto
-					.submenu-triangle
-						submenu-triangle-open()
-				profile-open()
-		&.is-search-focus
-			.menu-dropdown
-				&.main
-					background-color transparent !important
-			.global-search
-				background-color $windows_hover_color
-				input
-					position relative
-					bottom 46px
-					width $search_results_width
-					height 46px
-					background-color #fff
-					border-radius 0
-					padding 0 40px 0 8px
-					opacity 1
-				.clear
-					visibility visible
-					position absolute
-					top unset
-					bottom 47px
-					left 314px
-					z-index 12
-			.menu-dropdown
-				&.main
-					background-color $windows_hover_color
-					.submenu
-						visibility hidden
-					.submenu-triangle
-						width $search_results_width_all
-						submenu-triangle-open()
-				profile-open()
-		.menu-dropdown
-			&.main
-				margin 0
-				padding 12px 16px
-				width 49px
-				height 40px
-				z-index 5
-				&:hover
-					&:before
-						filter brightness(70%)
-				&:before
-					display inline-block
-					content ''
-					background-image image('svg/windows_logo.svg')
-					background-position center
-					width 17px
-					height 17px
-					transition all 0.2s ease-in-out
-					filter brightness(0%) invert(100%)
+// 		.logo-container
+// 			display none
+// 		.menu-icon
+// 			transition background 0.2s ease-in-out !important
+// 			height 40px
+// 			order 999
+// 			&.desktop
+// 				display flex !important
+// 			&.search.mobile
+// 				display none
+// 			&:before
+// 				line-height 40px !important
+// 			&:hover
+// 				background-color $windows_hover_color !important
+// 			&:first-of-type
+// 				margin-left auto
+// 		.global-search
+// 			position relative
+// 			display block !important
+// 			margin 0
+// 			padding 0
+// 			width 48px
+// 			height 40px
+// 			z-index 5
+// 			&:hover
+// 				background-color $windows_hover_color
+// 			.hotkey-marker
+// 				display none
+// 			.search-marker
+// 				position absolute
+// 				background-image image('svg/search.svg')
+// 				background-position center
+// 				background-repeat no-repeat
+// 				background-size 22px 22px
+// 				width 100%
+// 				height 100%
+// 				filter invert(1)
+// 				&:before
+// 					display none
+// 			.search-results
+// 				top unset !important
+// 				left 0
+// 				bottom 86px
+// 				width $search_results_width
+// 				height calc(100vh - 87px)
+// 				max-height 533px
+// 				overflow-y auto
+// 				border none
+// 				z-index 10
+// 			.field
+// 				width 48px
+// 				height 100%
+// 			.clear
+// 				visibility hidden
+// 			input
+// 				border-radius 0
+// 				padding 0
+// 				height 100%
+// 				opacity 0
+// 				z-index 11
+// 		&.is-submenu
+// 			.menu-dropdown
+// 				&.main
+// 					background-color $windows_hover_color
+// 					.submenu
+// 						visibility visible
+// 						height calc(100vh - 80px)
+// 						max-height 540px
+// 						overflow-y auto
+// 					.submenu-triangle
+// 						submenu-triangle-open()
+// 				profile-open()
+// 		&.is-search-focus
+// 			.menu-dropdown
+// 				&.main
+// 					background-color transparent !important
+// 			.global-search
+// 				background-color $windows_hover_color
+// 				input
+// 					position relative
+// 					bottom 46px
+// 					width $search_results_width
+// 					height 46px
+// 					background-color #fff
+// 					border-radius 0
+// 					padding 0 40px 0 8px
+// 					opacity 1
+// 				.clear
+// 					visibility visible
+// 					position absolute
+// 					top unset
+// 					bottom 47px
+// 					left 314px
+// 					z-index 12
+// 			.menu-dropdown
+// 				&.main
+// 					background-color $windows_hover_color
+// 					.submenu
+// 						visibility hidden
+// 					.submenu-triangle
+// 						width $search_results_width_all
+// 						submenu-triangle-open()
+// 				profile-open()
+// 		.menu-dropdown
+// 			&.main
+// 				margin 0
+// 				padding 12px 16px
+// 				width 49px
+// 				height 40px
+// 				z-index 5
+// 				&:hover
+// 					&:before
+// 						filter brightness(70%)
+// 				&:before
+// 					display inline-block
+// 					content ''
+// 					background-image image('svg/windows_logo.svg')
+// 					background-position center
+// 					width 17px
+// 					height 17px
+// 					transition all 0.2s ease-in-out
+// 					filter brightness(0%) invert(100%)
 				
-				.submenu-triangle
-					display block !important
-					visibility hidden
-					background-color rgba(48, 48, 48, .95)
-					position absolute
-					width 352px
-					max-width 800px !important
-					height calc(100vh - 100px)
-					max-height 560px
-					left 0
-					bottom 40px
-					transition all 0.2s ease-in-out
-					z-index -2
-					&:after
-					&:before
-						display none
-					span
-						display none
-					&.icon-avatar
-						img
-							position absolute
-							width 34px
-							height 34px
-							border-radius 50%
-							left 6px
-							bottom -12px
-							margin 0
-							opacity 0
-							transition all 0.25s ease-in-out
-				.submenu
-					visibility hidden
-					display block
-					position absolute
-					background-color transparent
-					top unset !important
-					left 50px
-					bottom 60px
-					width 300px
-					height calc(100vh - 260px)
-					max-height 360px
-					border none
-					overflow-y hidden
-					transition all 0.25s ease-in-out
-			&.profile
-				background-color transparent
-				visibility hidden
-				z-index 8
-				& > span
-					position fixed
-					background-color transparent
-					left 0
-					bottom 40px
-					min-width 50px
-					z-index 9
-				&.active
-					.submenu-triangle
-						background-color #4e5257
-						width $start_profile_width
-					.submenu
-						background-color #4e5257
-						width $start_profile_width
-						max-width $start_profile_width
-						.legend
-							display block
-				.submenu-triangle
-					background-color transparent
-					transition all 0.25s ease-in-out
-					margin-bottom -46px
-					padding 0 10px
-					width 50px
-					pointer-events all !important
-					opacity 0
-					img
-						border-radius 50%
-					&:after
-						display none
-					&:hover
-						background-color #fff
-						color #123
-				.submenu
-					display flex !important
-					flex-direction column
-					position fixed
-					justify-content flex-end
-					background-color transparent
-					top unset !important
-					left 0
-					bottom 56px
-					width 50px
-					height calc(100vh - 106px)
-					max-height 514px
-					border none
-					transition all 0.25s ease-in-out
-					opacity 0
-					z-index 8
-					.legend
-						display none
-					a
-						width $start_profile_width
+// 				.submenu-triangle
+// 					display block !important
+// 					visibility hidden
+// 					background-color rgba(48, 48, 48, .95)
+// 					position absolute
+// 					width 352px
+// 					max-width 800px !important
+// 					height calc(100vh - 100px)
+// 					max-height 560px
+// 					left 0
+// 					bottom 40px
+// 					transition all 0.2s ease-in-out
+// 					z-index -2
+// 					&:after
+// 					&:before
+// 						display none
+// 					span
+// 						display none
+// 					&.icon-avatar
+// 						img
+// 							position absolute
+// 							width 34px
+// 							height 34px
+// 							border-radius 50%
+// 							left 6px
+// 							bottom -12px
+// 							margin 0
+// 							opacity 0
+// 							transition all 0.25s ease-in-out
+// 				.submenu
+// 					visibility hidden
+// 					display block
+// 					position absolute
+// 					background-color transparent
+// 					top unset !important
+// 					left 50px
+// 					bottom 60px
+// 					width 300px
+// 					height calc(100vh - 260px)
+// 					max-height 360px
+// 					border none
+// 					overflow-y hidden
+// 					transition all 0.25s ease-in-out
+// 			&.profile
+// 				background-color transparent
+// 				visibility hidden
+// 				z-index 8
+// 				& > span
+// 					position fixed
+// 					background-color transparent
+// 					left 0
+// 					bottom 40px
+// 					min-width 50px
+// 					z-index 9
+// 				&.active
+// 					.submenu-triangle
+// 						background-color #4e5257
+// 						width $start_profile_width
+// 					.submenu
+// 						background-color #4e5257
+// 						width $start_profile_width
+// 						max-width $start_profile_width
+// 						.legend
+// 							display block
+// 				.submenu-triangle
+// 					background-color transparent
+// 					transition all 0.25s ease-in-out
+// 					margin-bottom -46px
+// 					padding 0 10px
+// 					width 50px
+// 					pointer-events all !important
+// 					opacity 0
+// 					img
+// 						border-radius 50%
+// 					&:after
+// 						display none
+// 					&:hover
+// 						background-color #fff
+// 						color #123
+// 				.submenu
+// 					display flex !important
+// 					flex-direction column
+// 					position fixed
+// 					justify-content flex-end
+// 					background-color transparent
+// 					top unset !important
+// 					left 0
+// 					bottom 56px
+// 					width 50px
+// 					height calc(100vh - 106px)
+// 					max-height 514px
+// 					border none
+// 					transition all 0.25s ease-in-out
+// 					opacity 0
+// 					z-index 8
+// 					.legend
+// 						display none
+// 					a
+// 						width $start_profile_width
 
-	// .l-top_menu-v2 .active .submenu
-	// 	max-height calc(100vh - 46px)
-	// 	overflow auto
+// 	// .l-top_menu-v2 .active .submenu
+// 	// 	max-height calc(100vh - 46px)
+// 	// 	overflow auto
 
-.l-page
-	background-color transparent !important
+// .l-page
+// 	background-color transparent !important
 
 .avatar img
 	border-radius 24px !important
@@ -286,67 +286,67 @@ profile-open()
 // .l-page > div > header.head.misc
 // 	display none
 
-header.head
-	h1
-	.notice
-	.b-separator
-	.b-breadcrumbs
-		color #fff
-		text-shadow -0   -1px 0   #000000, 0   -1px 0   #000000, -0    1px 0   #000000, 0    1px 0   #000000, -1px -0   0   #000000, 1px -0   0   #000000, -1px  0   0   #000000, 1px  0   0   #000000, -1px -1px 0   #000000, 1px -1px 0   #000000, -1px  1px 0   #000000, 1px  1px 0   #000000, -1px -1px 0   #000000, 1px -1px 0   #000000, -1px  1px 0   #000000, 1px  1px 0   #000000
+// header.head
+// 	h1
+// 	.notice
+// 	.b-separator
+// 	.b-breadcrumbs
+// 		color #fff
+// 		text-shadow -0   -1px 0   #000000, 0   -1px 0   #000000, -0    1px 0   #000000, 0    1px 0   #000000, -1px -0   0   #000000, 1px -0   0   #000000, -1px  0   0   #000000, 1px  0   0   #000000, -1px -1px 0   #000000, 1px -1px 0   #000000, -1px  1px 0   #000000, 1px  1px 0   #000000, -1px -1px 0   #000000, 1px -1px 0   #000000, -1px  1px 0   #000000, 1px  1px 0   #000000
 
-.p-profiles .profile-head .c-info,
-.p-profiles .profile-head .c-history,
-.p-profiles-show .profile-content .activity,
-.p-profiles-show .profile-content .lifetime,
-.p-profiles-show .profile-content .c-column.c-right,
-.l-content,
-.l-menu,
-.p-profiles-edit .block.m0,
-.p-user_history .block.m0,
-.p-achievements .block.m0,
-.p-achievements .p-achievements-global,
-.p-profiles-moderation .block.m0,
-.p-profiles-favourites .block.m0,
-.p-pages-ongoings .block.m0,
-.p-messages .block.m0,
-.p-dialogs .block.m0,
-.p-statistics .block,
-.p-pages-info .cc-2a,
-.p-moderations .block,
-.p-dashboards .block2,
-.p-pages .block2,
-.p-pages .cc-second,
-.p-dashboards .cc-second,
-.p-pages .cc-news,
-.p-dashboards .cc-news,
-.p-pages .b-brief,
-.b-collection_search,
-.p-contests .block,
-.b-topic,
-.user-agreement,
-.p-pages-privacy .l-page,
-.p-pages-for_right_holders .l-page,
-.p-sitemap .l-page,
-.b-search-results,
-.p-profiles-show .profile-content .block:not(.cc-2) 
-	border-radius 0 !important
-	padding 6px !important
-	background rgba(255, 255, 255, 0.7) !important
-	box-shadow 0 0 6px rgba(0, 0, 0, 0.3) !important
-	border 2px solid #1883d7 !important
-	color black
-	transition background-color 0.15s ease-in-out
-	&:hover
-		background-color #fff !important
+// .p-profiles .profile-head .c-info,
+// .p-profiles .profile-head .c-history,
+// .p-profiles-show .profile-content .activity,
+// .p-profiles-show .profile-content .lifetime,
+// .p-profiles-show .profile-content .c-column.c-right,
+// .l-content,
+// .l-menu,
+// .p-profiles-edit .block.m0,
+// .p-user_history .block.m0,
+// .p-achievements .block.m0,
+// .p-achievements .p-achievements-global,
+// .p-profiles-moderation .block.m0,
+// .p-profiles-favourites .block.m0,
+// .p-pages-ongoings .block.m0,
+// .p-messages .block.m0,
+// .p-dialogs .block.m0,
+// .p-statistics .block,
+// .p-pages-info .cc-2a,
+// .p-moderations .block,
+// .p-dashboards .block2,
+// .p-pages .block2,
+// .p-pages .cc-second,
+// .p-dashboards .cc-second,
+// .p-pages .cc-news,
+// .p-dashboards .cc-news,
+// .p-pages .b-brief,
+// .b-collection_search,
+// .p-contests .block,
+// .b-topic,
+// .user-agreement,
+// .p-pages-privacy .l-page,
+// .p-pages-for_right_holders .l-page,
+// .p-sitemap .l-page,
+// .b-search-results,
+// .p-profiles-show .profile-content .block:not(.cc-2) 
+// 	border-radius 0 !important
+// 	padding 6px !important
+// 	background rgba(255, 255, 255, 0.7) !important
+// 	box-shadow 0 0 6px rgba(0, 0, 0, 0.3) !important
+// 	border 2px solid #1883d7 !important
+// 	color black
+// 	transition background-color 0.15s ease-in-out
+// 	&:hover
+// 		background-color #fff !important
 
-.p-profiles-show .profile-content .activity
-	padding-bottom 24px !important
+// .p-profiles-show .profile-content .activity
+// 	padding-bottom 24px !important
 
-.p-profiles .profile-head .profile-actions .b-tooltipped
-	color #fff
-	&:before
-		font-size 18px
-		text-shadow -0   -2px 0   #000000, 0   -2px 0   #000000, -0    2px 0   #000000, 0    2px 0   #000000, -2px -0   0   #000000, 2px -0   0   #000000, -2px  0   0   #000000, 2px  0   0   #000000, -1px -2px 0   #000000, 1px -2px 0   #000000, -1px  2px 0   #000000, 1px  2px 0   #000000, -2px -1px 0   #000000, 2px -1px 0   #000000, -2px  1px 0   #000000, 2px  1px 0   #000000, -2px -2px 0   #000000, 2px -2px 0   #000000, -2px  2px 0   #000000, 2px  2px 0   #000000, -2px -2px 0   #000000, 2px -2px 0   #000000, -2px  2px 0   #000000, 2px  2px 0   #000000
+// .p-profiles .profile-head .profile-actions .b-tooltipped
+// 	color #fff
+// 	&:before
+// 		font-size 18px
+// 		text-shadow -0   -2px 0   #000000, 0   -2px 0   #000000, -0    2px 0   #000000, 0    2px 0   #000000, -2px -0   0   #000000, 2px -0   0   #000000, -2px  0   0   #000000, 2px  0   0   #000000, -1px -2px 0   #000000, 1px -2px 0   #000000, -1px  2px 0   #000000, 1px  2px 0   #000000, -2px -1px 0   #000000, 2px -1px 0   #000000, -2px  1px 0   #000000, 2px  1px 0   #000000, -2px -2px 0   #000000, 2px -2px 0   #000000, -2px  2px 0   #000000, 2px  2px 0   #000000, -2px -2px 0   #000000, 2px -2px 0   #000000, -2px  2px 0   #000000, 2px  2px 0   #000000
 
 .ignore-action
 .fav-remove.friend-action
@@ -358,16 +358,16 @@ header.head
 .b-badge::before
 	display block !important
 
-body
-	position relative
-	&:before
-		display block
-		content ''
-		width 100%
-		height 100vh
-		position fixed
-		background-image: image('os/win10_tan.png'), image('os/wallpaper.jpg')
-		background-size auto 120%, cover
-		background-repeat no-repeat
-		background-attachment fixed
-		background-position bottom 50% center, center
+// body
+// 	position relative
+// 	&:before
+// 		display block
+// 		content ''
+// 		width 100%
+// 		height 100vh
+// 		position fixed
+// 		background-image: image('os/win10_tan.png'), image('os/wallpaper.jpg')
+// 		background-size auto 120%, cover
+// 		background-repeat no-repeat
+// 		background-attachment fixed
+// 		background-position bottom 50% center, center
