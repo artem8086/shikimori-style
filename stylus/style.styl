@@ -358,6 +358,21 @@ $windows_hover_color = rgba(255, 255, 255, .15)
 .b-badge::before
 	display block !important
 
+.l-content.b-search-results.d-cutted_covers
+	counter-reset anime-list
+
+	.b-catalog_entry
+		&::after
+			position absolute
+			top 4px
+			left 4px
+			counter-increment anime-list
+			content counter(anime-list)
+			font-size 12px
+			color #fff
+			text-shadow -0   -1px 0   #000000, 0   -1px 0   #000000, -0    1px 0   #000000, 0    1px 0   #000000, -1px -0   0   #000000, 1px -0   0   #000000, -1px  0   0   #000000, 1px  0   0   #000000, -1px -1px 0   #000000, 1px -1px 0   #000000, -1px  1px 0   #000000, 1px  1px 0   #000000, -1px -1px 0   #000000, 1px -1px 0   #000000, -1px  1px 0   #000000, 1px  1px 0   #000000
+			pointer-events none
+
 // body
 // 	position relative
 // 	&:before
